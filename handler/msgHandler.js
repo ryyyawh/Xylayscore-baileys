@@ -1,16 +1,13 @@
-const menuCommand = require('../command/menu');
-
-const msgHandler = (sock) => {
+module.exports = (sock) => {
   sock.ev.on('messages.upsert', async ({ messages }) => {
     const msg = messages[0];
-    if (!msg.message || msg.key.fromMe) return;
+    if (!msg.message) return;
 
+    const from = msg.key.remoteJid;
     const text = msg.message?.conversation || msg.message?.extendedTextMessage?.text;
 
-    if (text === 'menu') {
-      await menuCommand(sock, msg);
+    if (text === '!ping') {
+      await sock.sendMessage(from, { text: 'pong! dari Xylays' });
     }
   });
 };
-
-module.exports = msgHandler;
