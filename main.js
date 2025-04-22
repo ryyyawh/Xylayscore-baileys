@@ -3,17 +3,22 @@ const msgHandler = require('./handler/msgHandler');
 const log = require('./lib/log');
 
 log.info('Bot Starting...');
-log.success('Koneksi berhasil! Xylays In Here');
-log.warn('Waspada: kemungkinan spam!');
-log.error('Gagal connect ke WhatsApp!');
 
 const token = process.argv[2];
 if (!token) {
   console.error('Gunakan: node main.js <token_session>');
-  process.exit();
+  return; // Gak pakai process.exit()
 }
 
 (async () => {
-  const sock = await connectToWhatsApp(token);
-  msgHandler(sock);
+  try {
+    const sock = await connectToWhatsApp(token);
+    log.success('Koneksi berhasil! Xylays In Here');
+    msgHandler(sock);
+  } catch (err) {
+    log.warn('Waspada: kemungkinan spam!');
+    log.error('Gagal connect ke WhatsApp!');
+    log.error(err?.message || err);
+    // Gak exit, biar container tetap hidup
+  }
 })();
