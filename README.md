@@ -1,5 +1,5 @@
 # Xylayscore-baileys
-
+![Gabutz](https://ar-hosting.pages.dev/1745289925209.mp4)
 ![Mikasa](https://ar-hosting.pages.dev/1745288163498.jpg)
 
 Xylayscore-baileys adalah modifikasi dari [Baileys](https://github.com/WhiskeySockets/Baileys), sebuah implementasi WhatsApp Web API menggunakan Node.js. Versi ini telah disesuaikan agar kompatibel dengan berbagai jenis base WhatsApp bot — baik itu CLI, REST API, Telegram-integrated bot, dan framework modular lain.
