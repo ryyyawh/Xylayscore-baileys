@@ -1,29 +1,20 @@
 {
-  "name": "Xylayscore-baileys",
+  "name": "xylays-new",
   "version": "6.7.7",
-  "description": "New Bail Supp all base",
-  "main": "main.js",
+  "description": "Perfect mirror of @whiskeysockets/baileys setup",
+  "main": "index.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node index.js"
   },
-  "keywords": [
-    "whatsapp",
-    "multi-device",
-    "ryybase"
-  ],
-  "author": "RyyAlpha",
-  "license": "MIT",
+  "type": "module",
   "dependencies": {
-    "@octokit/rest": "latest",
-    "@whiskeysockets/baileys": "latest",
-    "axios": "^1.6.0",
-    "body-parser": "^1.20.3",
-    "chalk": "^4.1.2",
-    "javascript-obfuscator": "^4.0.0",
-    "js-confuser": "^1.7.3",
-    "moment-timezone": "latest",
-    "node-telegram-bot-api": "^0.66.0",
-    "pino": "^9.5.0",
-    "readline-sync": "^1.4.10"
-  }
+    "@hapi/boom": "^10.0.0",
+    "@whiskeysockets/baileys": "^6.17.16",
+    "chalk": "^5.4.1",
+    "pino": "^8.21.0",
+    "pino-pretty": "^10.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
